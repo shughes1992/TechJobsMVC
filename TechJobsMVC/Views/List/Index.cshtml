@@ -13,14 +13,15 @@
     <tr>
         @{
             //TODO #2: Complete the View Jobs By Category Table
+            //add empty link?
         }
 
         <td></td> @* Feel free to remove or modify this element if necessary. *@
-        @foreach (var category in ViewBag.tableChoices)
+        @foreach (KeyValuePair<string, List<JobField>> category in ViewBag.tableChoices)
         {
             <td>
                 <ul>
-                    @foreach (var item in category.Value)
+                    @foreach (JobField item in category.Value)
                     {
                         <li>
                             <a asp-controller="List" asp-action="Jobs" asp-route-column="@category.Key" asp-route-value="@item">@item</a>

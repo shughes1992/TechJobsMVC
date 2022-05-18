@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using TechJobsMVC.Data;
 using TechJobsMVC.Models;
 
+
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TechJobsMVC.Controllers
@@ -22,10 +23,12 @@ namespace TechJobsMVC.Controllers
         };
         internal static Dictionary<string, List<JobField>> TableChoices = new Dictionary<string, List<JobField>>()
         {
+            //{"all", JobData.FindAll()},
             {"employer", JobData.GetAllEmployers()},
             {"location", JobData.GetAllLocations()},
             {"positionType", JobData.GetAllPositionTypes()},
             {"coreCompetency", JobData.GetAllCoreCompetencies()}
+
         };
 
         public IActionResult Index()
